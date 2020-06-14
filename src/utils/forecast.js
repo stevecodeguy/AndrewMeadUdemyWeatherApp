@@ -13,7 +13,7 @@ const forecast = (latitude, longitude, callback) => {
       const temperature = body.current.temperature;
       const feelslike = body.current.feelslike;
       const description = body.current.weather_descriptions[0];
-      const precip = body.current.precip;
+      const precip = body.current.precip * 100;
       const uvIndex = body.current.uv_index;
 
       callback(undefined, `${description}. It is currently ${temperature} degrees out. It feels like ${feelslike} degrees. The chance of precipitation is ${precip}. The UV index rating is ${uvIndex}`);
